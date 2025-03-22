@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Diaa?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: black; /* Black background */
+            margin: 0;
+            color: white; /* White text for better contrast */
+        }
+
+        .phrase {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #89CFF0; /* Baby Blue shadow for text */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #yesButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #89CFF0; /* Baby Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline */
+        }
+
+        #yesButton:hover {
+            background-color: #6BA8D9; /* Darker Baby Blue on hover */
+        }
+
+        #noButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #89CFF0; /* Baby Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #noButton:hover {
+            animation: moveButton 0.5s ease;
+        }
+
+        @keyframes moveButton {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50px, -50px);
+            }
+            50% {
+                transform: translate(-50px, 50px);
+            }
+            75% {
+                transform: translate(50px, 50px);
+            }
+            100% {
+                transform: translate(-50px, -50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="phrase">𝐝𝐨 𝐮 𝐥𝐨𝐯𝐞 𝐝𝐢𝐚𝐚?</div>
+    <div class="buttons">
+        <a href="https://example.com" id="yesButton">Yes</a>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
